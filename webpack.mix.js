@@ -15,7 +15,8 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/scss/app.scss', 'public/css')
     .browserSync({
         proxy: 'http://myapp.local/',
-        notify: false
+        notify: false,
+        file: ['./**/*.php']
     })
     .disableNotifications();
 

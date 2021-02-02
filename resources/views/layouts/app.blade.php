@@ -53,6 +53,12 @@
         </div>
     </nav>
 
+    <main role="content d-flex justify-content-center">
+        <div class="container py-5">
+            @yield('content')
+        </div>
+    </main>
+
     <script src={{ asset('js/app.js') }}></script>
 </body>
 
