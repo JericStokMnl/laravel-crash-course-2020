@@ -1,3 +1,4 @@
+import bootstrap from "bootstrap";
 window._ = require('lodash');
 
 /**
@@ -9,6 +10,11 @@ window._ = require('lodash');
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+
+try {
+    window.Popper = require('@popperjs/core').default;
+} catch (e) { }
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
