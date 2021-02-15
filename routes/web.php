@@ -1,5 +1,6 @@
 <?php
 
+use App\LogoutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
@@ -17,9 +18,10 @@ use App\Http\Controllers\Auth\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('posts.index');
-});
+    return view('home');
+})->name('home');
 
 Route::resource('register', RegisterController::class);
 Route::resource('dasboard', DashboardController::class);
-Route::resource('/login', LoginController::class);
+Route::resource('login', LoginController::class);
+Route::post('logout', [LogoutController::class, 'store'])->name('logout');

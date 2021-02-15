@@ -32,9 +32,9 @@
                         </li>
 
                         <li class="nav-item">
-                            <form action="" method="post">
+                            <form action={{ route('logout') }} method="post">
                                 @csrf
-                                <a class="nav-link" href={{ route('dasboard.index') }}>logout</a>
+                                <button class="nav-link">logout</button>
                             </form>
                         </li>
 
