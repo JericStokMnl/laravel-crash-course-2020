@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,6 @@ Route::get('/', function () {
     return view('posts.index');
 });
 
-Route::resource('dasboard', DashboardController::class);
 Route::resource('register', RegisterController::class);
+Route::resource('dasboard', DashboardController::class);
+Route::resource('/login', LoginController::class);

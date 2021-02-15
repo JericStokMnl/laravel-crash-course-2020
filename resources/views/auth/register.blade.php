@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-lg-7 mx-auto">
         <div class="rounded shadow d-block px-4 py-5">
-            <form class="needs-validation" novalidate method="POST" action="">
+            <form class="needs-validation" novalidate method="POST" action={{ route('register.store') }}>
                 @csrf
 
                 <div class="form-group mb-3">
