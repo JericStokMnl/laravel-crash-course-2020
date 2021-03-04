@@ -7,7 +7,7 @@
 1. AUTHENTICATED STATE 🍒
 1. LOGGING IN 🍒
 1. LOGGING OUT 🍒
-1. MIDDLEWARE
+1. MIDDLEWARE 🍒
 1. POST FORM
 1. SETTING UP POSTS
 1. USER/POST RELATIONSHIP
@@ -27,3 +27,14 @@
 1. SOFT DELETING MODELS
 1. FINAL TIDYING
 1. WRAPPING UP
+
+
+1. LOGIN
+2. SEL  il icon)
+3. NAVIGATING TOP SCHEDULE PAGE
+4. NAVIGATING TO DATASET
+    * Static layout represets the way data will display
+5. EDITING RECORDS
+    * Click on the Schedule dataset icon (manage content)
+    * Show to records on the table
+    * Edit one field and show the output (Sandbox vs Live)

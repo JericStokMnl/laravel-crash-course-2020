@@ -18,10 +18,10 @@ use App\Http\Controllers\Auth\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('home');s
+    return view('home');
 })->name('home');
 
-Route::resource('register', RegisterController::class);
-Route::resource('dasboard', DashboardController::class);
-Route::resource('login', LoginController::class);
+Route::resource('register', RegisterController::class)->only('index', 'store');
+Route::resource('dasboard', DashboardController::class)->only('index');
+Route::resource('login', LoginController::class)->only('index', 'store');
 Route::post('logout', [LogoutController::class, 'store'])->name('logout');
