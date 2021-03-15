@@ -30,6 +30,13 @@
                     @enderror
                 </div>
 
+                <div class="custom-control custom-checkbox mb-4">
+                    <input class="custom-control-input" name="remember" type="checkbox" id="remember">
+                    <label class="custom-control-label" for="remember">
+                        Remember me
+                    </label>
+                </div>
+
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>
         </div>

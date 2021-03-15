@@ -34,7 +34,7 @@
                         <li class="nav-item">
                             <form action={{ route('logout') }} method="post">
                                 @csrf
-                                <button class="nav-link">logout</button>
+                                <button class="nav-link btn btn-primary text-white">logout</button>
                             </form>
                         </li>
 

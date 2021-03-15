@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware(['auth']);
-    }
+
+    // public function __construct()
+    // {
+    //     $this->middleware(['auth']);
+    // }
 
     /**
      * Display a listing of the resource.
@@ -19,6 +20,9 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        if (!auth()->user()) {
+            abort(403, 'Unauthorized damn it.');
+        }
         return view('dashboard');
     }
 }
