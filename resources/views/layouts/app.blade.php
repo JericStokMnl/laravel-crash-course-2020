@@ -24,6 +24,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('post.index') }}">Posts</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     @auth
