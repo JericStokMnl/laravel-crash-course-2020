@@ -25,5 +25,7 @@
                 No posts
             </div>
         @endforelse
+
+        {{ $posts->links() }}
     </div>
 @endsection
