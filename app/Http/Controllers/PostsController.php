@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
@@ -30,7 +29,7 @@ class PostsController extends Controller
         return redirect()->route('post.index');
     }
 
-    public function show($id)
+    public function show(Post $post)
     {
         //
     }

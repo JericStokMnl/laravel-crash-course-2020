@@ -15,17 +15,30 @@
         </form>
 
         @forelse ($posts as $post)
-            <div class="d-block py-3" role="alert">
+            <div class="d-block py-3{{ $loop->last ? ' mb-3' : ''}}" role="alert">
                 <span><strong>{{$post->user->name}}</strong></span>
                 {{$post->body}}
                 <span class="text-muted">{{$post->user->created_at->diffForHumans()}}</span>
+                <div class="d-flex">
+                    <form action="/" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-sm btn-link">Like</button>
+                    </form>
+                    <form action="/" method="POST">
+                        @csrf
+                        <button type="submit" class="btn btn-sm btn-link">Unlike</button>
+                    </form>
+                </div>
             </div>
+
         @empty
             <div class="alert alert-warning" role="alert">
                 No posts
             </div>
         @endforelse
 
-        {{ $posts->links() }}
+        @if (count($posts))
+            {!! $posts->links() !!}
+        @endif
     </div>
 @endsection
