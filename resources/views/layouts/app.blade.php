@@ -31,7 +31,9 @@
                 <ul class="navbar-nav ms-auto">
                     @auth
                         <li class="nav-item">
-                            <a class="nav-link" href={{ route('dasboard.index') }}>Jeric Epon</a>
+                            <a class="nav-link" href={{ route('dasboard.index') }}>
+                                <img src="https://ui-avatars.com/api/?name={{ auth()->user()->name }}&size=35" class="img-fluid rounded" alt="" srcset="">
+                            </a>
                         </li>
 
                         <li class="nav-item">

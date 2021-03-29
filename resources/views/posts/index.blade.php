@@ -20,14 +20,21 @@
                 {{$post->body}}
                 <span class="text-muted">{{$post->user->created_at->diffForHumans()}}</span>
                 <div class="d-flex">
-                    <form action="/" method="POST">
+                    @if (!$post->likedBy(auth()->user()))
+                        <form action="{{ route('post.likes', $post) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-link">Like</button>
+                        </form>
+                    @endif
+
+                    <form action="{{ route('post.likes', $post) }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-sm btn-link">Like</button>
-                    </form>
-                    <form action="/" method="POST">
-                        @csrf
+                        @method('DELETE')
                         <button type="submit" class="btn btn-sm btn-link">Unlike</button>
                     </form>
+                    @if ($post->likes->count())
+                        <button class="btn btn-sm btn-link disabled text-primary">{{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count()) }}</button>
+                    @endif
                 </div>
             </div>
 
