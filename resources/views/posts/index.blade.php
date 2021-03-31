@@ -36,6 +36,13 @@
                             <button type="submit" class="btn btn-sm btn-link">Unlike</button>
                         </form>
                     @endauth
+
+                    <form action="{{ route('post.destroy', $post) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-sm btn-link">Delete</button>
+                    </form>
+
                     @if ($post->likes->count())
                         <button class="btn btn-sm btn-link disabled text-primary">{{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count()) }}</button>
                     @endif

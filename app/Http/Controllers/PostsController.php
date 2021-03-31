@@ -7,14 +7,14 @@ use App\Models\Post;
 class PostsController extends Controller
 {
 
-    // public function __construct()
-    // {
-    //     $this->middleware(['auth']);
-    // }
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+    }
 
     public function index()
     {
-        $posts = Post::with(['user', 'likes'])->simplePaginate(10);
+        $posts = Post::latest()->with(['user', 'likes'])->simplePaginate(10);
         return view('posts.index', compact('posts'));
     }
 
@@ -35,18 +35,22 @@ class PostsController extends Controller
     }
 
 
-    public function edit($id)
+    public function edit()
     {
         //
     }
 
-    public function update($id)
+    public function update()
     {
         //
     }
 
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $this->authorize('delete', $post);
+
+        $post->delete();
+
+        return back();
     }
 }
