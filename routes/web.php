@@ -17,7 +17,7 @@ Route::get('/', function () {
 Route::resource('register', RegisterController::class)->only('index', 'store');
 Route::resource('dasboard', DashboardController::class)->only('index');
 Route::resource('login', LoginController::class)->only('index', 'store');
-Route::resource('post', PostsController::class)->only('index', 'store', 'destroy');
+Route::resource('post', PostsController::class)->only('index', 'store', 'destroy', 'show');
 
 Route::post('logout', [LogoutController::class, 'store'])->name('logout');
 Route::get('user/{user:username}/posts', [UserPostController::class, 'index'])->name('users.posts');
